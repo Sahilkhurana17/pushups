@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>100 Pushups A Day Tracker</title>
+	<style>
+		body {
+			background-color: #2196F3;
+			font-family: Arial, sans-serif;
+			color: white;
+			text-align: center;
+			padding-top: 50px;
+		}
+		h1 {
+			font-size: 48px;
+			margin-bottom: 50px;
+			text-shadow: 2px 2px #1976D2;
+		}
+		h2 {
+			font-size: 36px;
+			margin-top: 50px;
+			margin-bottom: 25px;
+			text-shadow: 2px 2px #1976D2;
+		}
+		p {
+			font-size: 24px;
+			margin-top: 0;
+		}
+		button {
+			font-size: 24px;
+			padding: 10px 20px;
+			background-color: #0D47A1;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 10px;
+			text-shadow: 2px 2px #1565C0;
+		}
+		button:hover {
+			background-color: #1976D2;
+		}
+		#gif {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>100 Pushups A Day Tracker</h1>
+	<h2>Current Streak: <span id="streak">0</span></h2>
+	<p>Click the button below each time you complete 100 pushups.</p>
+	<button onclick="addPushups()">Add 100 Pushups</button>
+	<div id="gif"></div>
+	<script>
+		let streak = 0;
+		let gif = document.getElementById("gif");
+
+		function addPushups() {
+			streak += 1;
+			document.getElementById("streak").textContent = streak;
+			if (streak % 5 == 0) {
+				gif.innerHTML = '<iframe src="https://giphy.com/embed/VRKheDy4DkBMrQm66p" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/doge-dogecoin-coin-VRKheDy4DkBMrQm66p">via GIPHY</a></p>';
+				gif.style.display = "block";
+				setTimeout(function(){ gif.style.display = "none"; }, 3000);
+			}
+		}
+	</script>
+</body>
+</html>
